@@ -92,20 +92,31 @@ let inventory = [
 // Highlight: Target integer of "33" for an id.
 // Log car details belonging to id "33".
 
-const carDetails = () => {
-  let car = inventory.filter(index => index.id === 33);
+// const carDetails = () => {
+//   let car = inventory.filter(index => index.id === 33);
 
-  console.log(
-    `Car 33 is a ${car[0].car_year} ${car[0].car_make} ${car[0].car_model}`
-  );
-}
+//   console.log(
+//     `Car 33 is a ${car[0].car_year} ${car[0].car_make} ${car[0].car_model}`
+//   );
+// }
 
-console.log(carDetails())
+// console.log(carDetails())
 
 // ==== Challenge 2 ====
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
-let lastCar = 0;
-console.log();
+
+// Highlight: Find last index of "inventory" array's details
+
+const lastCarDetails = () => {
+  let lastCar = 0;
+  // Re-assignment of "let" lastCar;
+  let lastIndex = lastCar = inventory[inventory.length - 1];
+
+  // console.log(lastIndex);
+  return lastIndex;
+}
+
+console.log(lastCarDetails());
 
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
