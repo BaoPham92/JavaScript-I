@@ -1,6 +1,6 @@
 // Let's get some practice writing a few objects for a new group of interns at a small business.
 
-// ==== Challenge 1: Writing Objects ==== 
+// ==== Challenge 1: Writing Objects ====
 // HR needs some information on the new interns put into a database.  Given an id, email, first name, and gender. Create an object for each person in the company list:
 
 // 1, mmelloy0@psu.edu, Mitzi, F
@@ -14,8 +14,8 @@ const example = {
   id: 0,
   name: "Example",
   email: "examples@you.edu",
-  gender: "F",
-}
+  gender: "F"
+};
 
 // Write your intern objects here:
 // Individual objects with information.
@@ -55,7 +55,7 @@ const example = {
 //   gender: "F"
 // };
 
-// ==== Challenge 2: Reading Object Data ==== 
+// ==== Challenge 2: Reading Object Data ====
 // Once your objects are created, log out the following requests from HR into the console:
 
 // Mitzi's name
@@ -73,7 +73,7 @@ const example = {
 // Antonietta's Gender
 // console.log(Antonietta.id, Antonietta.name, Antonietta.email, Antonietta.gender);
 
-// ==== Challenge 3: Object Methods ==== 
+// ==== Challenge 3: Object Methods ====
 // Give Kennan the ability to say "Hello, my name is Kennan!" Use the console.log provided as a hint.
 // console.log(kennan.speak());
 
@@ -94,7 +94,7 @@ const example = {
 
 // === Great work! === Head over to the the arrays.js. You may come back and attempt the Stretch Challenge once you have completed the challenges in arrays.js and function-conversion.js.
 
-// ==== Stretch Challenge: Nested Objects and the this keyword ==== 
+// ==== Stretch Challenge: Nested Objects and the this keyword ====
 
 // 1. Create a parent object with properties for name and age.  Make the name Susan and the age 70.
 // 2. Nest a child object in the parent object with name and age as well.  The name will be George and the age will be 50.
@@ -105,33 +105,42 @@ const parent = {
   name: "Susan",
   age: 70,
   talk: function() {
-    return `Hello, my name is ${this.name} and ${this.age}`
+    return `Hello, my name is ${this.name} and ${this.age}`;
   },
   child: {
     name: "George",
     age: 50,
     talk: function() {
-      return `Hello, my name is ${this.name} and ${this.age}`
+      return `Hello, my name is ${this.name} and ${this.age}`;
     },
     grandChild: {
       name: "Sam",
       age: 30,
       talk: function() {
-        return `Hello, my name is ${this.name} and ${this.age}`
+        return `Hello, my name is ${this.name} and ${this.age}`;
       }
     }
   }
 };
 
 // Log the parent object's name
-console.log(parent);
+console.log(`Parent's name is ${parent.name}`);
 
 // Log the child's age
+console.log(`Parent's child's age is ${parent.child.age}`);
 
 // Log the name and age of the grandchild
+const gChild = parent.child.grandChild;
+
+console.log(
+  `Grandchild is ${gChild.name} and ${gChild.age}`
+);
 
 // Have the parent speak
+console.log(parent.talk());
 
 // Have the child speak
+console.log(parent.child.talk());
 
 // Have the grandchild speak
+console.log(parent.child.grandChild.talk());
