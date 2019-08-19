@@ -141,22 +141,45 @@ let inventory = [
 
 //  Highlight: Retrieve "car_year" of each object in inventory
 
-const carYears = () => {
-  let carYears = [];
+// const carYears = () => {
+//   let carYears = [];
 
-  for (let index of inventory ) {
-    carYears.push(index.car_year)
-  }
+//   for (let index of inventory ) {
+//     carYears.push(index.car_year)
+//   }
 
-  console.log(carYears);
-}
+//   console.log(carYears);
+// }
 
-console.log(carYears())
+// console.log(carYears())
 
 // ==== Challenge 5 ====
 // The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
-let oldCars = [];
-console.log();
+
+// Highlight:
+//  1. Validation of any car year exceeding the value of "2000"
+//  2. Validation vice versa.
+
+const carBooks = () => {
+  let oldCars = [];
+  let newCars = [];
+
+  for (let index of inventory) {
+    // Validation for cars over "2000" integer
+    if (index.car_year > 2000) {
+      newCars.push(index.car_year);
+    } else if (index.car_year < 2000) {
+      oldCars.push(index.car_year);
+    }
+  }
+
+  return console.log(
+    `amount of new cars = ${newCars.length}`,
+    `amount of old cars = ${oldCars.length}`
+  );
+};
+
+carBooks();
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory. Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
