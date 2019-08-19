@@ -160,28 +160,42 @@ let inventory = [
 //  1. Validation of any car year exceeding the value of "2000"
 //  2. Validation vice versa.
 
-const carBooks = () => {
-  let oldCars = [];
-  let newCars = [];
+// const carBooks = () => {
+//   let oldCars = [];
+//   let newCars = [];
 
-  for (let index of inventory) {
-    // Validation for cars over "2000" integer
-    if (index.car_year > 2000) {
-      newCars.push(index.car_year);
-    } else if (index.car_year < 2000) {
-      oldCars.push(index.car_year);
-    }
-  }
+//   for (let index of inventory) {
+//     // Validation for cars over "2000" integer
+//     if (index.car_year > 2000) {
+//       newCars.push(index.car_year);
+//     } else if (index.car_year < 2000) {
+//       oldCars.push(index.car_year);
+//     }
+//   }
 
-  return console.log(
-    `amount of new cars = ${newCars.length}`,
-    `amount of old cars = ${oldCars.length}`
-  );
-};
+//   return console.log(
+//     `amount of new cars = ${newCars.length}`,
+//     `amount of old cars = ${oldCars.length}`
+//   );
+// };
 
-carBooks();
+// carBooks();
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory. Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
-let BMWAndAudi = [];
-console.log();
+const clientOrder = () => {
+  let BMWAndAudi = [];
+
+  for(let index of inventory) {
+    switch(index.car_make) {
+      case "BMW":
+      BMWAndAudi.push(index.car_model);
+      case "Audi":
+      BMWAndAudi.push(index.car_model);
+    }
+  }
+
+  return BMWAndAudi;
+}
+
+console.log(clientOrder());
